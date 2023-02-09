@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@mixin.dev/mixin-node-sdk": "^5.0.0"
+  }
+}
