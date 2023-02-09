@@ -9,7 +9,7 @@ export const useUserClient = ($message, t) => {
     },
   };
 
-  const keystore = ls.get('token');
+  const keystore = {"user_id":"fbd26bc6-3d04-4964-a7fe-a540432b16e2","scope":"PROFILE:READ APPS:READ APPS:WRITE","authorization_id":"756ef612-e7f1-44e0-977c-ab875f822f29","private_key":"ShGg4PdoHy9ZQdWfQFlm0kPKHnY1M3EhXRrrg5iFZfJEuhtDXDu5sQ1l8tdA-P1RKQKcSp5a2unutLybs8CH5A"};
   const config = (
     keystore
     && !!keystore.user_id
