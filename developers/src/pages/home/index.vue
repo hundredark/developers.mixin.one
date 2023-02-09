@@ -103,7 +103,7 @@ export default {
     });
 
     onMounted(() => {
-      changeTheme('#fff');
+      changeTheme('#333');
     });
 
     return {

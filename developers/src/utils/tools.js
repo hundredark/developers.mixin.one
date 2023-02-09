@@ -18,8 +18,22 @@ export const getUrlParameter = (name) => {
   return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 };
 
+const getMixinContext = async () => {
+  let ctx = {};
+  if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.MixinContext) {
+    ctx = JSON.parse(prompt('MixinContext.getContext()'))
+    console.log(ctx)
+    ctx.platform = ctx.platform || 'iOS'
+  } else if (window.MixinContext && typeof window.MixinContext.getContext === 'function') {
+    ctx = JSON.parse(window.MixinContext.getContext());
+    ctx.platform = ctx.platform || 'Android';
+  }
+
+  return ctx;
+};
+
 export const getImmersive = () => {
-  const ctx = client.getMixinContext();
+  const ctx = getMixinContext();
   return ctx.immersive ? ctx.immersive : false;
 };
 
