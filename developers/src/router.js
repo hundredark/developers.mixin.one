@@ -32,6 +32,12 @@ const routes = [
     meta: { type: 'dashboard' },
   },
   {
+    path: '/test',
+    name: 'test',
+    component: () => import('./pages/test'),
+    meta: { type: 'document' },
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
     component: () => import('./404'),
